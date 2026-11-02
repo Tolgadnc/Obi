@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Obi · {{ t('site.tagline') }}{% endblock %}
+{% block main %}
+<h1>{{ t('site.tagline') }}</h1>
+<h2>{{ t('home.belts') }}</h2>
+<p class="hint">{{ t('home.intro') }}</p>
+<ol class="belt-list">
+  {% for belt in belts %}
+  <li>
+    <a class="belt-card" href="{{ belt_url(belt) }}" style="--belt: {{ belt.colour }}">
+      <span class="swatch swatch-belt" aria-hidden="true"></span>
+      <span class="belt-card-name">{{ belt.name[lang] }}</span>
+      <span class="belt-card-kyu">{{ kyu(belt.kyu) }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

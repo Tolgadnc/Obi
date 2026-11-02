@@ -1,0 +1,67 @@
+# Interface text. Every key needs both nl and en; a template asking for a missing key fails the build.
+
+site.tagline:
+  nl: Wat je moet kennen voor elke judogordel, met video's.
+  en: What to know for each judo belt, with videos.
+site.description:
+  nl: >-
+    Onofficiële gids bij het kyu-programma van Judo Vlaanderen: per gordel de technieken die je
+    moet kennen, met video's.
+  en: >-
+    Unofficial guide to the Judo Vlaanderen kyu syllabus: the techniques for each belt, with videos.
+
+nav.language: {nl: Taal, en: Language}
+nav.belts: {nl: Andere gordels, en: Other belts}
+
+home.belts: {nl: Gordels, en: Belts}
+home.intro:
+  nl: Kies de gordel waarvoor je oefent om te zien wat je moet kennen.
+  en: Pick the belt you're working towards to see what you need to know.
+
+stage.basis: {nl: Nieuw, en: New}
+stage.basis.hint:
+  nl: Technieken die je voor deze gordel aanleert.
+  en: Techniques you learn for this belt.
+stage.verdieping: {nl: Toepassen, en: Apply}
+stage.verdieping.hint:
+  nl: "Technieken van de vorige gordel, nu toegepast: in combinaties, overnames en de overgang naar de grond."
+  en: "Techniques from the previous belt, now applied: in combinations, counters and the transition to groundwork."
+stage.verpersoonlijking: {nl: Eigen maken, en: Make it your own}
+stage.verpersoonlijking.hint:
+  nl: Je eigen voorkeurstechnieken en vrijere oefenvormen.
+  en: Your own favourite techniques and freer forms of practice.
+
+category.ukemi: {nl: Ukemi · valtechnieken, en: Ukemi · breakfalls}
+category.nage-waza: {nl: Nage-waza · worpen, en: Nage-waza · throws}
+category.katame-waza: {nl: Katame-waza · grondtechnieken, en: Katame-waza · groundwork}
+category.kata: {nl: Kata, en: Kata}
+category.oefenvormen: {nl: Oefenvormen, en: Training forms}
+
+group.te-waza: {nl: Te-waza · handworp, en: Te-waza · hand throw}
+group.koshi-waza: {nl: Koshi-waza · heupworp, en: Koshi-waza · hip throw}
+group.ashi-waza: {nl: Ashi-waza · been- en voetworp, en: Ashi-waza · foot and leg throw}
+group.ma-sutemi-waza: {nl: Ma-sutemi-waza · offerworp naar achteren, en: Ma-sutemi-waza · rear sacrifice throw}
+group.yoko-sutemi-waza: {nl: Yoko-sutemi-waza · offerworp opzij, en: Yoko-sutemi-waza · side sacrifice throw}
+group.osaekomi-waza: {nl: Houdgreep, en: Hold-down}
+group.shime-waza: {nl: Verwurging, en: Choke}
+group.kansetsu-waza: {nl: Armklem, en: Armlock}
+
+technique.in_syllabus: {nl: In het gordelprogramma, en: In the belt syllabus}
+
+video.play: {nl: Video afspelen, en: Play video}
+video.more: {nl: Meer video's, en: More videos}
+video.open_on_youtube: {nl: Bekijken op YouTube, en: Watch on YouTube}
+video.privacy:
+  nl: De video wordt pas van YouTube geladen wanneer je op afspelen tikt.
+  en: Videos only load from YouTube once you tap play.
+video.none:
+  nl: Voor deze techniek is er (nog) geen geschikte video.
+  en: There is no suitable video for this technique yet.
+video.draft: {nl: "Concept: nog geen goedgekeurde video.", en: "Draft: no approved video yet."}
+
+footer.unofficial:
+  nl: Onofficiële app, niet verbonden met Judo Vlaanderen.
+  en: Unofficial app, not affiliated with Judo Vlaanderen.
+footer.source: {nl: Gordelprogramma gebaseerd op, en: Belt syllabus based on}
+footer.source_link: {nl: het Groeimodel van Judo Vlaanderen, en: Judo Vlaanderen's Groeimodel}
+footer.videos: {nl: Video's zijn eigendom van hun makers., en: Videos belong to their creators.}

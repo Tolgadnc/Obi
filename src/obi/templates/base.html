@@ -1,0 +1,30 @@
+{% set lang_names = {"nl": "Nederlands", "en": "English"} %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="description" content="{{ t('site.description') }}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="{{ url('static/style.css') }}">
+  <script src="{{ url('static/app.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ home_url }}">Obi</a>
+    <nav class="lang-switch" aria-label="{{ t('nav.language') }}">
+      {% for code in langs %}
+      <a href="{{ lang_urls[code] }}" hreflang="{{ code }}" lang="{{ code }}" data-set-lang="{{ code }}" aria-label="{{ lang_names[code] }}"{% if code == lang %} aria-current="true"{% endif %}>{{ code | upper }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main>
+{% block main %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <p>{{ t('footer.unofficial') }}</p>
+    <p>{{ t('footer.source') }} <a href="{{ source_url }}">{{ t('footer.source_link') }}</a>. {{ t('footer.videos') }}</p>
+  </footer>
+</body>
+</html>

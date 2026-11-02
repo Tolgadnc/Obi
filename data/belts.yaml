@@ -1,0 +1,39 @@
+# The belts, from 6th kyu (white) to 1st kyu (brown).
+#
+# A belt page shows what you need to obtain that belt, in the Groeimodel's three stages:
+#   basis              new techniques for this belt
+#   verdieping         the previous belt's techniques, now applied
+#   verpersoonlijking  making techniques your own (from green belt)
+# Syllabus entries are technique ids from techniques.yaml. A technique's page lives under the
+# belt where it is introduced (basis), e.g. /nl/geel/o-soto-gari/.
+#
+# A belt without syllabus items (white) needs an intro instead.
+
+- id: wit
+  kyu: 6
+  colour: "#ffffff"
+  name: {nl: Witte gordel, en: White belt}
+  slug: {nl: wit, en: white}
+  intro:
+    nl: >-
+      Iedereen begint met de witte gordel. Voor de 6de kyu is er geen examen: je leert bewegen,
+      veilig vallen en samen oefenen. Je eerste doel is de gele gordel.
+    en: >-
+      Everyone starts with the white belt. There is no exam for 6th kyu: you learn to move,
+      to fall safely and to practise with a partner. Your first goal is the yellow belt.
+
+- id: geel
+  kyu: 5
+  colour: "#f6c90e"
+  name: {nl: Gele gordel, en: Yellow belt}
+  slug: {nl: geel, en: yellow}
+  syllabus:
+    basis:
+      - ushiro-ukemi
+      - yoko-ukemi
+      - seoi-nage
+      - o-soto-gari
+      - o-goshi
+      - yoko-shiho-gatame
+      - kami-shiho-gatame
+      - tate-shiho-gatame

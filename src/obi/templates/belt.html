@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ belt.name[lang] }} · Obi{% endblock %}
+{% block main %}
+<header class="belt-header" style="--belt: {{ belt.colour }}; --on-belt: {{ belt.colour | on_colour }}">
+  <p class="belt-header-kyu">{{ kyu(belt.kyu) }}</p>
+  <h1>{{ belt.name[lang] }}</h1>
+</header>
+{% if belt.intro %}
+<p class="lead">{{ belt.intro[lang] }}</p>
+{% endif %}
+{% for section in sections %}
+<section class="stage">
+  <h2>{{ t('stage.' ~ section.stage) }}</h2>
+  <p class="hint">{{ t('stage.' ~ section.stage ~ '.hint') }}</p>
+  {% for group in section.groups %}
+  <h3>{{ t('category.' ~ group.category) }}</h3>
+  <ul class="technique-list">
+    {% for technique in group.techniques %}
+    <li>
+      {% if technique.has_page %}
+      <a class="technique-card" href="{{ technique_url(technique) }}">
+        <span class="jp">{{ technique.name }}</span>
+        <span class="translation">{{ technique.translation[lang] }}</span>
+      </a>
+      {% else %}
+      <div class="technique-card">
+        <span class="jp">{{ technique.name }}</span>
+        <span class="translation">{{ technique.translation[lang] }}</span>
+        <p class="description">{{ technique.description[lang] }}</p>
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>
+{% endfor %}
+<nav class="belt-nav" aria-label="{{ t('nav.belts') }}">
+  {% if previous %}
+  <a href="{{ belt_url(previous) }}">← {{ previous.name[lang] }}</a>
+  {% endif %}
+  {% if following %}
+  <a class="belt-nav-next" href="{{ belt_url(following) }}">{{ following.name[lang] }} →</a>
+  {% endif %}
+</nav>
+{% endblock %}

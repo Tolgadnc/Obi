@@ -1,0 +1,85 @@
+# Every technique, kata part and training form that belts.yaml refers to.
+#
+#   id               URL-safe name; used in belts.yaml and in page addresses
+#   name             Japanese name in the Groeimodel's spelling (deviations: SOURCE_NOTES.md)
+#   kanji            optional
+#   category         ukemi | nage-waza | katame-waza | kata | oefenvormen
+#   group            nage-waza:   te-waza | koshi-waza | ashi-waza | ma-sutemi-waza | yoko-sutemi-waza
+#                    katame-waza: osaekomi-waza | shime-waza | kansetsu-waza
+#                    (other categories have no group)
+#   translation      our own wording, in nl and en
+#   description      training forms (oefenvormen) only: one line in nl and en
+#   videos           the first approved video is the primary one; at most 3 approved
+#     youtube        the 11-character video id
+#     title, channel as YouTube shows them
+#     start, end     optional, in seconds
+#     approved       true once checked; unapproved videos are never shown
+#   no_video_reason  when no suitable video exists; the page then says "no video available"
+
+# Ukemi
+
+- id: ushiro-ukemi
+  name: Ushiro-ukemi
+  kanji: 後受身
+  category: ukemi
+  translation: {nl: Achterwaartse valbreking, en: Backward breakfall}
+  videos: []
+
+- id: yoko-ukemi
+  name: Yoko-ukemi
+  kanji: 横受身
+  category: ukemi
+  translation: {nl: Zijwaartse valbreking, en: Sideways breakfall}
+  videos: []
+
+# Nage-waza
+
+- id: seoi-nage
+  name: Seoi-nage
+  kanji: 背負投
+  category: nage-waza
+  group: te-waza
+  translation: {nl: Schouderworp, en: Shoulder throw}
+  videos: []
+
+- id: o-soto-gari
+  name: O-soto-gari
+  kanji: 大外刈
+  category: nage-waza
+  group: ashi-waza
+  translation: {nl: Grote buitenwaartse maaiworp, en: Major outer reap}
+  videos: []
+
+- id: o-goshi
+  name: O-goshi
+  kanji: 大腰
+  category: nage-waza
+  group: koshi-waza
+  translation: {nl: Grote heupworp, en: Major hip throw}
+  videos: []
+
+# Katame-waza
+
+- id: yoko-shiho-gatame
+  name: Yoko-shiho-gatame
+  kanji: 横四方固
+  category: katame-waza
+  group: osaekomi-waza
+  translation: {nl: Zijwaartse vierpuntshoudgreep, en: Side four-quarter hold}
+  videos: []
+
+- id: kami-shiho-gatame
+  name: Kami-shiho-gatame
+  kanji: 上四方固
+  category: katame-waza
+  group: osaekomi-waza
+  translation: {nl: Vierpuntshoudgreep vanaf het hoofd, en: Upper four-quarter hold}
+  videos: []
+
+- id: tate-shiho-gatame
+  name: Tate-shiho-gatame
+  kanji: 縦四方固
+  category: katame-waza
+  group: osaekomi-waza
+  translation: {nl: Vierpuntshoudgreep schrijlings, en: Vertical four-quarter hold}
+  videos: []

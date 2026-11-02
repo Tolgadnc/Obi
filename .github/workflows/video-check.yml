@@ -1,0 +1,33 @@
+name: Weekly video check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - id: check
+        run: uv run obi check-videos --report report.md
+        continue-on-error: true
+      - name: Open or update an issue
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create dead-video --color B60205 --description "A linked video is no longer available" || true
+          existing=$(gh issue list --label dead-video --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file report.md
+          else
+            gh issue create --title "Videos no longer available" --label dead-video --body-file report.md
+          fi

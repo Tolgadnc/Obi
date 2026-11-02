@@ -1,0 +1,342 @@
+/* Mobile-first; belt colours are accents only, so text contrast never depends on them. */
+
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1b1b1f;
+  --muted: #5b5b64;
+  --line: #dcdad3;
+  --accent: #1f4fa8;
+  --outline: rgba(0, 0, 0, 0.35);
+  --radius: 12px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141417;
+    --surface: #1d1d22;
+    --text: #ececf1;
+    --muted: #a6a6b0;
+    --line: #34343c;
+    --accent: #8fb0ff;
+    --outline: rgba(255, 255, 255, 0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main,
+.site-header,
+.site-footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.25rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--muted);
+}
+
+.lead {
+  font-size: 1.125rem;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+/* Header and footer */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-switch a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lang-switch a[aria-current] {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.language-choice {
+  text-align: center;
+  padding-top: 20vh;
+}
+
+/* Belts */
+
+.swatch {
+  display: inline-block;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  background: var(--belt);
+  box-shadow: inset 0 0 0 1px var(--outline);
+}
+
+.swatch-belt {
+  width: 2.5rem;
+  height: 0.75rem;
+  border-radius: 3px;
+}
+
+.belt-list,
+.technique-list,
+.appearances {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.belt-card,
+.technique-card {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.belt-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+a.belt-card:hover,
+a.technique-card:hover {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.belt-card-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.belt-card-kyu {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.belt-header {
+  margin: 0.5rem 0 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--belt);
+  color: var(--on-belt);
+  box-shadow: inset 0 0 0 1px var(--outline);
+}
+
+.belt-header h1 {
+  margin: 0;
+}
+
+.belt-header-kyu {
+  margin: 0;
+  font-weight: 600;
+}
+
+.belt-nav {
+  display: flex;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.belt-nav-next {
+  margin-left: auto;
+}
+
+/* Techniques */
+
+.jp {
+  display: block;
+  font-weight: 600;
+}
+
+.translation {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.crumb {
+  margin: 0.5rem 0 0;
+}
+
+.kanji {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.label {
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.appearances li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.appearances a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appearances .hint {
+  margin: 0;
+}
+
+/* Videos: a local poster until the visitor taps play, then the YouTube player */
+
+.video {
+  margin: 1rem 0;
+}
+
+.video-poster,
+.video-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  background: #0e0e11;
+}
+
+.video-poster {
+  background: radial-gradient(circle at center, #2c2c34, #0e0e11);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.play-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  position: relative;
+}
+
+.play-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1.1rem;
+  height: 1.3rem;
+  transform: translateX(10%);
+  background: #ffffff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.video figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.no-video {
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--muted);
+}
+
+.no-video.draft {
+  box-shadow: none;
+  border: 2px dashed var(--line);
+}

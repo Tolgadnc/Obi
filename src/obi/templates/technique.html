@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ technique.name }} · Obi{% endblock %}
+{% block main %}
+<p class="crumb"><a href="{{ belt_url(home_belt) }}">← {{ home_belt.name[lang] }}</a></p>
+<h1>{{ technique.name }}</h1>
+{% if technique.kanji %}
+<p class="kanji" lang="ja">{{ technique.kanji }}</p>
+{% endif %}
+<p class="lead">{{ technique.translation[lang] }}</p>
+<p class="labels">
+  <span class="label">{{ t('category.' ~ technique.category) }}</span>
+  {% if technique.group %}
+  <span class="label">{{ t('group.' ~ technique.group) }}</span>
+  {% endif %}
+</p>
+
+{% set videos = technique.approved_videos %}
+{% if videos %}
+{% for video in videos %}
+{% if loop.index == 2 %}
+<h2>{{ t('video.more') }}</h2>
+{% endif %}
+<figure class="video">
+  <a class="video-poster" href="{{ video.watch_url }}" data-youtube="{{ video.youtube }}"
+    {%- if video.start %} data-start="{{ video.start }}"{% endif %}
+    {%- if video.end %} data-end="{{ video.end }}"{% endif %}
+    data-title="{{ video.title }}" aria-label="{{ t('video.play') }}: {{ video.title }}">
+    <span class="play-icon" aria-hidden="true"></span>
+    <span>{{ t('video.play') }}</span>
+  </a>
+  <figcaption>{{ video.title }} · {{ video.channel }} · <a href="{{ video.watch_url }}">{{ t('video.open_on_youtube') }}</a></figcaption>
+</figure>
+{% endfor %}
+<p class="hint">{{ t('video.privacy') }}</p>
+{% elif technique.no_video_reason %}
+<p class="no-video">{{ t('video.none') }}</p>
+{% elif draft %}
+<p class="no-video draft">{{ t('video.draft') }}</p>
+{% endif %}
+
+<h2>{{ t('technique.in_syllabus') }}</h2>
+<ul class="appearances">
+  {% for belt, stage in appearances %}
+  <li>
+    <a href="{{ belt_url(belt) }}" style="--belt: {{ belt.colour }}"><span class="swatch" aria-hidden="true"></span>{{ belt.name[lang] }}</a>
+    <span class="hint">{{ t('stage.' ~ stage) }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obi</title>
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // Send visitors to their language: the one they picked before, else the browser's first nl/en.
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem("obi.lang"); } catch (e) {}
+      if (lang !== "nl" && lang !== "en") {
+        lang = "en";
+        var preferred = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < preferred.length; i++) {
+          var code = String(preferred[i]).toLowerCase().split("-")[0];
+          if (code === "nl" || code === "en") { lang = code; break; }
+        }
+      }
+      location.replace(lang + "/");
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ url('static/style.css') }}">
+  <script src="{{ url('static/app.js') }}" defer></script>
+</head>
+<body>
+  <main class="language-choice">
+    <h1>Obi</h1>
+    <p><a href="{{ url('nl/') }}" lang="nl" data-set-lang="nl">Nederlands</a> · <a href="{{ url('en/') }}" lang="en" data-set-lang="en">English</a></p>
+  </main>
+</body>
+</html>
