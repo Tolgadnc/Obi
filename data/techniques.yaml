@@ -10,7 +10,7 @@
 #   translation      our own wording, in nl and en
 #   description      training forms (oefenvormen) only: one line in nl and en
 #   videos           the first approved video is the primary one; at most 3 approved
-#     youtube        the 11-character video id
+#     youtube        the 11-character video id, in quotes
 #     title, channel as YouTube shows them
 #     start, end     optional, in seconds
 #     approved       true once checked; unapproved videos are never shown
@@ -23,14 +23,38 @@
   kanji: 後受身
   category: ukemi
   translation: {nl: Achterwaartse valbreking, en: Backward breakfall}
-  videos: []
+  videos:
+    - youtube: "_g7rvsxTkz8"
+      title: "Ushiro-ukemi - Demo"
+      channel: Efficient Judo
+      approved: true
+    - youtube: "VoktcQAxEPg"
+      title: "Ukemi"
+      channel: KODOKAN
+      approved: false
+    - youtube: "Fr3AOnlYNV4"
+      title: "Judo Breakfalls - Ushiro Ukemi - Back Breakfall"
+      channel: Judo4MMA
+      approved: false
 
 - id: yoko-ukemi
   name: Yoko-ukemi
   kanji: 横受身
   category: ukemi
   translation: {nl: Zijwaartse valbreking, en: Sideways breakfall}
-  videos: []
+  videos:
+    - youtube: "JCwK1Ia4jsc"
+      title: "Yoko-ukemi - Demo"
+      channel: Efficient Judo
+      approved: true
+    - youtube: "VoktcQAxEPg"
+      title: "Ukemi"
+      channel: KODOKAN
+      approved: false
+    - youtube: "SISaUno7KTM"
+      title: "Judo Breakfalls - Yoko Ukemi - Side Breakfall"
+      channel: Judo4MMA
+      approved: false
 
 # Nage-waza
 
@@ -40,7 +64,19 @@
   category: nage-waza
   group: te-waza
   translation: {nl: Schouderworp, en: Shoulder throw}
-  videos: []
+  videos:
+    - youtube: "zIq0xI0ogxk"
+      title: "背負投 / Seoi-nage"
+      channel: KODOKAN
+      approved: true
+    - youtube: "_-5Un6jLtRY"
+      title: "Seoi-nage - Demo"
+      channel: Efficient Judo
+      approved: false
+    - youtube: "_CDPbG4oKEw"
+      title: "SEOI-NAGE by #JudoKids"
+      channel: International Judo Federation
+      approved: false
 
 - id: o-soto-gari
   name: O-soto-gari
@@ -48,7 +84,19 @@
   category: nage-waza
   group: ashi-waza
   translation: {nl: Grote buitenwaartse maaiworp, en: Major outer reap}
-  videos: []
+  videos:
+    - youtube: "c-A_nP7mKAc"
+      title: "大外刈 / O-soto-gari"
+      channel: KODOKAN
+      approved: true
+    - youtube: "poq0cDG-0DY"
+      title: "Gele band judo:  O-soto-gari | Grote buitenwaartse beenworp"
+      channel: Judo Bond Nederland
+      approved: true
+    - youtube: "93YEMueeF24"
+      title: "Osoto-gari - Demo"
+      channel: Efficient Judo
+      approved: false
 
 - id: o-goshi
   name: O-goshi
@@ -56,7 +104,19 @@
   category: nage-waza
   group: koshi-waza
   translation: {nl: Grote heupworp, en: Major hip throw}
-  videos: []
+  videos:
+    - youtube: "yhu1mfy2vJ4"
+      title: "大腰 / O-goshi"
+      channel: KODOKAN
+      approved: true
+    - youtube: "UBNaj4E-qVg"
+      title: "Gele band judo: O-goshi | Heupworp"
+      channel: Judo Bond Nederland
+      approved: true
+    - youtube: "Mwz5At87OxE"
+      title: "O-goshi - Demo"
+      channel: Efficient Judo
+      approved: false
 
 # Katame-waza
 
@@ -66,7 +126,19 @@
   category: katame-waza
   group: osaekomi-waza
   translation: {nl: Zijwaartse vierpuntshoudgreep, en: Side four-quarter hold}
-  videos: []
+  videos:
+    - youtube: "TT7XJVSEQxA"
+      title: "横四方固 /  Yoko-shiho-gatame"
+      channel: KODOKAN
+      approved: true
+    - youtube: "1GJn6OEyuO4"
+      title: "Yoko-shiho-gatame - Demo"
+      channel: Efficient Judo
+      approved: false
+    - youtube: "T_rmNO6FShA"
+      title: "YOKO SHIHO GATAME BASICS"
+      channel: Judo Advantage
+      approved: false
 
 - id: kami-shiho-gatame
   name: Kami-shiho-gatame
@@ -74,7 +146,19 @@
   category: katame-waza
   group: osaekomi-waza
   translation: {nl: Vierpuntshoudgreep vanaf het hoofd, en: Upper four-quarter hold}
-  videos: []
+  videos:
+    - youtube: "HFuMjOv0WN8"
+      title: "上四方固 /  Kami-shiho-gatame"
+      channel: KODOKAN
+      approved: true
+    - youtube: "2evEh7OBnBg"
+      title: "Kami-shiho-gatame - Demo"
+      channel: Efficient Judo
+      approved: false
+    - youtube: "FxfanQw82Ps"
+      title: "Kami-shiho-gatame by #JudoKids"
+      channel: International Judo Federation
+      approved: false
 
 - id: tate-shiho-gatame
   name: Tate-shiho-gatame
@@ -82,4 +166,18 @@
   category: katame-waza
   group: osaekomi-waza
   translation: {nl: Vierpuntshoudgreep schrijlings, en: Vertical four-quarter hold}
-  videos: []
+  videos:
+    - youtube: "55-rFmBx53g"
+      title: "縦四方固 /  Tate-shiho-gatame"
+      channel: KODOKAN
+      approved: true
+    - youtube: "XjWzNxlKH1M"
+      title: "Tate-shiho-gatame - Demo"
+      channel: Efficient Judo
+      approved: false
+    - youtube: "R5rzCcaMB6c"
+      title: "Tate-Shiho-Gatame Tips | Riki Judo Dojo"
+      channel: Riki Judo Dojo
+      start: 17
+      end: 36
+      approved: false

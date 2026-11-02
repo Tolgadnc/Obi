@@ -48,7 +48,7 @@ To **add a video**, add an entry under the technique's `videos`. It is not shown
 
 ```yaml
   videos:
-    - youtube: abcDEF12345   # the part after watch?v=
+    - youtube: "abcDEF12345" # the part after watch?v=, in quotes
       title: O-soto-gari demonstration
       channel: Some Judo Channel
       start: 12              # optional, seconds
